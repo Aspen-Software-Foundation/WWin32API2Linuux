@@ -6,44 +6,42 @@ This document describes how to use the linux_windows_compat.h header — a Windo
 
 It provides support for basic types, timing functions, message boxes, string manipulation, formatted output, and basic threading simulation.
 
-Types
+
 
 The following typedefs are defined to mirror Win32 types:
 
-Type
 
-Description
+**Description:**
 BOOL
 
-Integer boolean (int)
+**Integer boolean (int)**
 DWORD
 
-32-bit unsigned integer
+**32-bit unsigned integer**
 WORD
 
-16-bit unsigned integer
+**16-bit unsigned integer**
 BYTE
 
-8-bit unsigned integer
+**8-bit unsigned integer**
 HANDLE
 
-Generic pointer (void*)
+**Generic pointer (void)**
 LPCSTR
 
-Pointer to constant ANSI string
+**Pointer to constant ANSI string**
 LPSTR
 
-Pointer to modifiable ANSI string
+**Pointer to modifiable ANSI string**
 LPCWSTR
 
-Pointer to constant wide string
+**Pointer to constant wide string**
 LPWSTR
 
-Pointer to modifiable wide string
-
+**Pointer to modifiable wide string**
 LPVOID
 
-Pointer to any type (void*)
+**Pointer to any type (void)**
 LPCVOID
 
 Constant pointer to any type
@@ -56,17 +54,17 @@ NULL, TRUE, FALSE are also defined for compatibility.
 
 void Delay(DWORD milliseconds)
 
-Description:
+**Description:**
 Delays execution for the specified number of milliseconds.
 
-Usage:
+**Usage:**
 Delay(1000); // Sleep for 1 second
 DWORD GetTickCount()
 
-Description:
+**Description:**
 Returns the number of milliseconds since the system started.
 
-Usage:
+**Usage:**
 DWORD ticks = GetTickCount();
 printf("System uptime: %u ms\n", ticks);
 
@@ -74,11 +72,12 @@ printf("System uptime: %u ms\n", ticks);
 # Message Boxes
 int MessageBoxA(void* hwnd, const char* text, const char* title, unsigned int type)
 
-Description:
+**Description:**
 Displays a simple message box using zenity if available, or prints to terminal otherwise.
 
 Usage:
 MessageBoxA(NULL, "Operation complete", "MyApp", 0);
+
 int MessageBoxW(void* hwnd, LPCWSTR text, LPCWSTR title, unsigned int type)
 
 Description:
