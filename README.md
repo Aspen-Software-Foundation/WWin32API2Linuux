@@ -151,21 +151,15 @@ WaitForSingleObject(hThread, INFINITE);
 
 Note: All waits are treated as infinite; timeout handling is not implemented.
 
-Constants
 
-Constant
 
-Description
-
-WAIT_OBJECT_0
-
+WAIT_OBJECT_0:
 Return value on success
 
-INFINITE
-
+INFINITE:
 Used to block forever
 
-Full Example
+Full Example:
 
 #include "linux_windows_compat.h"
 
